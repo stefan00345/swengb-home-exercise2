@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
     fun onButtonClick() {
 
         val name = editText_name.text.toString()
-        var age = editText_age.text.toString().toIntOrNull()
+        var age = editText_age.text.toString().toIntOrNull() ?: 0
 
         // TODO fehlende dateien auf git adden
 
-     val sharedPreferences = getSharedPreferences("at.fh.swengb.ulbel.homeexercise2", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("at.fh.swengb.ulbel.homeexercise2", Context.MODE_PRIVATE)
         sharedPreferences.edit().putString("NAME", name).apply()
         sharedPreferences.edit().putInt("AGE", age).apply()
 
