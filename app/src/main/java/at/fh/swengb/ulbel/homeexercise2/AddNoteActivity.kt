@@ -22,7 +22,7 @@ class AddNoteActivity : AppCompatActivity() {
 
         val note = Note(editText_title.text.toString(), editText_content.text.toString())   //create new note with properties of edit texts
         myDb.noteDao.insert(note)                                                           // insert note to DB
-        myAdapter.updateData(myDb.noteDao.findAll())                                        //update Adapter
+        myAdapter.updateData(myDb.noteDao.findAll())                                        //update adapter
 
         finish()                                                                            // finish activity
 
