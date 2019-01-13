@@ -24,7 +24,7 @@ class AddNoteActivity : AppCompatActivity() {
         myDb.noteDao.insert(note)                                                           // insert note to DB
         myAdapter.updateData(myDb.noteDao.findAll())                                        //update adapter
 
-        finish()                                                                            // finish activity
+        finish()                                                                            // finish Activity
 
     }
 

@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     fun onButtonClick(v: View) {
 
         val name = editText_name.text.toString()                    //get name from editText
-        val age = editText_age.text.toString().toIntOrNull() ?: 0   //get and convert age from edit Text
+        val age = editText_age.text.toString().toIntOrNull() ?: 0   //get and convert age from editText
 
         val sharedPreferences = getSharedPreferences("at.fh.swengb.ulbel.homeexercise2", Context.MODE_PRIVATE) //save to shared preferences:
         sharedPreferences.edit().putString("NAME", name).apply()
