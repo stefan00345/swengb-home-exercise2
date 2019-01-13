@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,18 +14,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun onButtonClick() {
+    fun onButtonClick(v: View) {
 
-        val name = editText_name.text.toString()
-        var age = editText_age.text.toString().toIntOrNull() ?: 0
+        val name = editText_name.text.toString()                    //get name from editText
+        val age = editText_age.text.toString().toIntOrNull() ?: 0   //get and convert age from edit Text
 
-        // TODO fehlende dateien auf git adden
-
-        val sharedPreferences = getSharedPreferences("at.fh.swengb.ulbel.homeexercise2", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("at.fh.swengb.ulbel.homeexercise2", Context.MODE_PRIVATE) //save to shared preferences:
         sharedPreferences.edit().putString("NAME", name).apply()
         sharedPreferences.edit().putInt("AGE", age).apply()
 
-        //val intent = Intent(this, NoteListActivity::class.java)
-        //startActivity(intent)
+        val intent = Intent(this, NoteListActivity::class.java) //start NoteListActivity
+        startActivity(intent)
     }
 }
